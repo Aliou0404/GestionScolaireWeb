@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+/*$primary: rgb(198, 173,5 );
+$danger: rgb(176, 43, 3);
+$secondary: rgb(223, 44, 90);
+*/
+@import "gs-variables";
+
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+
+
+.photo-profil{
+  width: $photoProfilWidht;
+  height:  $photoProfilHeight;
+  @extend .rounded-circle;
+  @extend .border;
+
+}
+
+.gs-form-text{
+  font-size: $formTextSize;
+
+}
+
+.gs-form-label{
+  @extend .gs-form-text;
+  color: $primary;
+  text-decoration: underline;
+  text-transform: capitalize;
+
+}
+
+.gs-form-output-value{
+  @extend .gs-form-text;
+
+
+}
