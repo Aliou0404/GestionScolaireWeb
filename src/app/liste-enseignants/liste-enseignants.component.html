@@ -1,19 +1,19 @@
 <div>
-  <div>Liste des apprenants</div>
+  <div>Liste des enseignants</div>
   <div class=" border border-primary">
-    <div *ngFor="let a of apprenants" class="border border-primary mx-2 p-2  " >
+    <div *ngFor="let e of enseignants" class="border border-primary mx-2 p-2  " >
 
       <span class="gs-form-label">Id</span> :
-      <span class="gs-form-output-value">{{a.id}}</span><br>
+      <span class="gs-form-output-value">{{e.id}}</span><br>
 
       <span class="gs-form-label">Prenom</span> :
-      <span class="gs-form-output-value">{{a.prenom}}</span><br>
+      <span class="gs-form-output-value">{{e.prenom}}</span><br>
 
       <span class="gs-form-label">Nom</span> :
-      <span class="gs-form-output-value">{{a.nom}}</span><br>
+      <span class="gs-form-output-value">{{e.nom}}</span><br>
 
-      <span class="gs-form-label">Promo</span> :
-      <span class="gs-form-output-value">{{a.promo}}</span>
+      <span class="gs-form-label">Matieres</span> :
+      <span class="gs-form-output-value">{{e.matieres}}</span>
 
     </div>
 

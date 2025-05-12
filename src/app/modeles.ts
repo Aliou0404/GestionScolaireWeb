@@ -11,7 +11,7 @@ export interface Enseignant{
   nom: string,
   prenom: string,
   matieres:string,
-  Images: string;
+  Images?: string;
 
 }
 

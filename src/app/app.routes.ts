@@ -3,6 +3,7 @@ import {DetailsApprenantComponent} from './details-apprenant/details-apprenant.c
 import {DetailEnseignantComponent} from './detail-enseignant/detail-enseignant.component';
 import {AccueilComponent} from './accueil/accueil.component';
 import {ListeApprenantsComponent} from './liste-apprenants/liste-apprenants.component';
+import {ListeEnseignantsComponent} from './liste-enseignants/liste-enseignants.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: '/accueil', pathMatch: 'full'},
@@ -10,6 +11,8 @@ export const routes: Routes = [
   {path: 'details-apprenant',component: DetailsApprenantComponent},
   {path: 'details-enseignant', component: DetailEnseignantComponent},
   {path: 'liste-apprenants', component: ListeApprenantsComponent},
+  {path: 'liste-enseignants', component: ListeEnseignantsComponent},
+
   {path: 'accueil', component: AccueilComponent},
 
 ];

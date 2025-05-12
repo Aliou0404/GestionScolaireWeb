@@ -1,4 +1,6 @@
 import {Apprenant} from './modeles';
+import {Enseignant} from './modeles';
+
 
 export const Apprenants: Apprenant[] = [
   {
@@ -19,4 +21,26 @@ export const Apprenants: Apprenant[] = [
     "prenom": "Bineta",
     "promo": 5
   }
+]
+
+export const Enseignants: Enseignant[] = [
+  {
+    "id": 1,
+    "nom": "Mbaye",
+    "prenom": "Abdoulaye",
+    "matieres": "Java"
+  },
+  {
+    "id": 2,
+    "nom": "Koundoul",
+    "prenom": "Birane",
+    "matieres": "Php"
+  },
+  {
+    "id": 3,
+    "nom": "Ndiaye",
+    "prenom": "ALamine",
+    "matieres": "JEE"
+  }
+
 ]
