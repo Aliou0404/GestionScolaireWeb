@@ -1,10 +1,9 @@
 export interface Apprenant{
   id ?: number,
   nom: string,
-  prenom:string,
-  image: string;
-
-
+  prenom:string|null,
+  image?: string,
+  promo: number|null;
 }
 
 export interface Enseignant{

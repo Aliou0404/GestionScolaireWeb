@@ -13,7 +13,8 @@ export class DetailsApprenantComponent {
     id:1,
     nom: "Diop",
     prenom: "Aliou",
-    image: "adiop.jpg"
+    image: "adiop.jpg",
+    promo: 6
 
   }
 

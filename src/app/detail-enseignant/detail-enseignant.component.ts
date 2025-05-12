@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import {Apprenant, Enseignant} from '../modeles';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-detail-enseignant',
-  imports: [],
+  imports: [
+    NgIf
+  ],
   templateUrl: './detail-enseignant.component.html',
   styleUrl: './detail-enseignant.component.scss'
 })
@@ -14,7 +17,7 @@ export class DetailEnseignantComponent {
     nom: "Ndiaye",
     prenom: "Cheikh",
     Images: "andiaye.png",
-    matieres: "Java"
+    matieres: " java"
 
   }
 
