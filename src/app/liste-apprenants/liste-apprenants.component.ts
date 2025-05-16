@@ -1,13 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {Apprenant, Enseignant} from '../modeles';
 import {APPRENANTS} from '../mockup';
-import {JsonPipe, NgForOf} from '@angular/common';
+import {JsonPipe, NgForOf, NgIf} from '@angular/common';
 import {ApprenantsService} from '../services/apprenants.service';
 
 @Component({
   selector: 'app-liste-apprenants',
   imports: [
-    NgForOf
+    NgForOf,
+    NgIf
   ],
   templateUrl: './liste-apprenants.component.html',
   styleUrl: './liste-apprenants.component.scss'
