@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Apprenant} from '../modeles';
+import {Apprenant, Enseignant} from '../modeles';
 import {APPRENANTS} from '../mockup';
 import {JsonPipe, NgForOf} from '@angular/common';
 import {ApprenantsService} from '../services/apprenants.service';
@@ -14,17 +14,32 @@ import {ApprenantsService} from '../services/apprenants.service';
 })
 export class ListeApprenantsComponent  implements OnInit {
   apprenants: Apprenant[] = [];
+  finChargement = false;
+  errorMessage = "";
 
   constructor(private apprenantsService:ApprenantsService) {
   }
 
   ngOnInit(): void{
+    this.loadApprenants();
+
+  }
+
+  loadApprenants(): void {
+    this.finChargement = false;
+    this.errorMessage = "";
     this.apprenantsService.getAllApprenant().subscribe({
       next: (apprenantsData: Apprenant[]) => {
         this.apprenants = apprenantsData;
       },
       error:(error:any) => {
         console.log("erreur de recup liste apprenants", error);
+        this.finChargement = true;
+        this.errorMessage = "erreur:" +error.status+" msg = "+error.error.message;
+      },
+      complete: () => {
+        this.finChargement = true;
+        this.errorMessage = "";
       }
     })
 
