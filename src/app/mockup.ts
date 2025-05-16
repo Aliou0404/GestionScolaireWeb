@@ -2,7 +2,7 @@ import {Apprenant} from './modeles';
 import {Enseignant} from './modeles';
 
 
-export const Apprenants: Apprenant[] = [
+export const APPRENANTS: Apprenant[] = [
   {
     "id": 1,
     "nom": "Diop",
@@ -23,7 +23,7 @@ export const Apprenants: Apprenant[] = [
   }
 ]
 
-export const Enseignants: Enseignant[] = [
+export const ENSEIGNANTS: Enseignant[] = [
   {
     "id": 1,
     "nom": "Mbaye",

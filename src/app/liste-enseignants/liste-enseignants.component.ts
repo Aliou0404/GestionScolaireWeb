@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {NgForOf} from "@angular/common";
 import { Enseignant} from '../modeles';
-import {Enseignants} from '../mockup';
+import {ENSEIGNANTS} from '../mockup';
 
 @Component({
   selector: 'app-liste-enseignants',
@@ -12,7 +12,6 @@ import {Enseignants} from '../mockup';
   styleUrl: './liste-enseignants.component.scss'
 })
 export class ListeEnseignantsComponent {
-  enseignants: Enseignant[] = Enseignants;
+  enseignants: Enseignant[] = ENSEIGNANTS;
 
-  protected readonly Enseignants = Enseignants;
 }
