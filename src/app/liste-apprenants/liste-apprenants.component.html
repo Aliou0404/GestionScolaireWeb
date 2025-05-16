@@ -1,8 +1,9 @@
 <div>
   <div>Liste des apprenants</div>
   <div *ngIf="finChargement == false">
-    <img src="/images/loading.gif" width="5%" alt="Chargement des apprenants">
+    <img src="/images/loading.gif" width="50px" alt="Chargement des apprenants">
   </div>
+  <div class="text-danger" *ngIf="errorMessage">{{errorMessage}}</div>
   <div class=" border border-primary">
     <div *ngFor="let a of apprenants" class="border border-primary mx-2 p-2  " >
 

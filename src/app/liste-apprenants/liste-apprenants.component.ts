@@ -29,6 +29,7 @@ export class ListeApprenantsComponent  implements OnInit {
   loadApprenants(): void {
     this.finChargement = false;
     this.errorMessage = "";
+    this.apprenants = [];
     this.apprenantsService.getAllApprenant().subscribe({
       next: (apprenantsData: Apprenant[]) => {
         this.apprenants = apprenantsData;
