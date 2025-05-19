@@ -8,7 +8,7 @@ import {ListeEnseignantsComponent} from './liste-enseignants/liste-enseignants.c
 export const routes: Routes = [
   {path: '', redirectTo: '/accueil', pathMatch: 'full'},
   //{path: '', component: DetailsApprenantComponent},
-  {path: 'details-apprenant',component: DetailsApprenantComponent},
+  {path: 'details-apprenant/:id',component: DetailsApprenantComponent},
   {path: 'details-enseignant', component: DetailEnseignantComponent},
   {path: 'liste-apprenants', component: ListeApprenantsComponent},
   {path: 'liste-enseignants', component: ListeEnseignantsComponent},

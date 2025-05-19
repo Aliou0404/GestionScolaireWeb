@@ -3,12 +3,14 @@ import {Apprenant, Enseignant} from '../modeles';
 import {APPRENANTS} from '../mockup';
 import {JsonPipe, NgForOf, NgIf} from '@angular/common';
 import {ApprenantsService} from '../services/apprenants.service';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-liste-apprenants',
   imports: [
     NgForOf,
-    NgIf
+    NgIf,
+    RouterLink
   ],
   templateUrl: './liste-apprenants.component.html',
   styleUrl: './liste-apprenants.component.scss'
@@ -17,13 +19,14 @@ export class ListeApprenantsComponent  implements OnInit {
   apprenants: Apprenant[] = [];
   finChargement = false;
   errorMessage = "";
+  selectedApprenant:number | undefined;
+  overApprenant: number | undefined;
 
   constructor(private apprenantsService:ApprenantsService) {
   }
 
   ngOnInit(): void{
     this.loadApprenants();
-
   }
 
   loadApprenants(): void {
@@ -44,6 +47,12 @@ export class ListeApprenantsComponent  implements OnInit {
         this.errorMessage = "";
       }
     })
+  }
+  setSelectedApprenant(idApprenant: number| undefined): void {
+    this.selectedApprenant = idApprenant;
+  }
 
+  setOverApprenant(idApprenant: number| undefined): void {
+    this.overApprenant = idApprenant;
   }
 }

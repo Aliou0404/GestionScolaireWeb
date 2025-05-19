@@ -16,4 +16,12 @@ export class ApprenantsService {
   getAllApprenant(): Observable<Apprenant[]> {
     return this._http.get<Apprenant[]>(this.urlListeApprenants);
   }
+
+  getApprenantById(id: string): Observable<Apprenant> {
+    const url =  `http://localhost:8081/apprenants/${id}`;
+   // const url =  'http://localhost:8081/apprenants/'+id;
+
+    return this._http.get<Apprenant>(url);
+
+  }
 }

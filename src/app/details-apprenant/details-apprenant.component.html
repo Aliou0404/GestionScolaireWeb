@@ -2,9 +2,9 @@
 
 <div class="border border-primary rounded-3 mx-2 p-2 ">
 
-
+ <div *ngIf="errorMessage" class="text-danger">{{errorMessage}}</div>
   <div>Details apprenants</div>
-  <div>
+  <div *ngIf="apprenant">
     <img src="/images/{{apprenant.image}}" class="photo-profil "><br>
     <span class="gs-form-label">id   </span> :
     <span class="gs-form-output-value">{{apprenant.id}}</span><br>
