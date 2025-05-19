@@ -5,7 +5,8 @@
  <div *ngIf="errorMessage" class="text-danger">{{errorMessage}}</div>
   <div>Details apprenants</div>
   <div *ngIf="apprenant">
-    <img src="/images/{{apprenant.image}}" class="photo-profil "><br>
+    <img *ngIf="apprenant.image" src="/images/{{apprenant.image}}" class="photo-profil ">
+    <img *ngIf="!apprenant.image" src="/images/icone.png" class="photo-profil "><br>
     <span class="gs-form-label">id   </span> :
     <span class="gs-form-output-value">{{apprenant.id}}</span><br>
 
