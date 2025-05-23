@@ -7,7 +7,7 @@ import {Enseignant} from '../modeles';
   providedIn: 'root'
 })
 export class EnseignantsService {
-  urlListeEnseignant = "http://localhost:8081/enseignant";
+  urlListeEnseignant = "http://localhost:8082/enseignant";
 
   constructor(
     private _http: HttpClient
@@ -18,11 +18,16 @@ export class EnseignantsService {
   }
 
   getEnseignantById(id: string): Observable<Enseignant> {
-    const url =  `http://localhost:8081/enseignant${id}`;
+    const url =  `http://localhost:8082/enseignant/${id}`;
     // const url =  'http://localhost:8081/enseignants/'+id;
 
     return this._http.get<Enseignant>(url);
 
+  }
+
+  deleteEnseignantById(id: number): Observable<void> {
+    const url =  `http://localhost:8082/enseignant/${id}`;
+    return this._http.delete<void>(url);
   }
 
 }
