@@ -1,7 +1,20 @@
 <div>
   <div>Liste des enseignants</div>
   <div class=" border border-primary">
-    <div *ngFor="let e of enseignants" class="border border-primary mx-2 p-2  " >
+    <div *ngIf="!finChargement">
+      <img src="/images/loading.gif" width="50px" alt="Chargement des enseignants">
+    </div>
+    <div class="text-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+
+
+    <div *ngFor="let e of enseignants" class="border border-primary mx-2 p-2  "
+         (click)="setSelectedEnseignant(e?.id)"
+         [class.selectedDivItem] = "e.id == selectedEnseignant"
+         [class.overDivItem] = "e.id == overEnseignant"
+         (mouseover)="setOverEnseignant(e?.id)"
+    >
+      <div>selectedEnseignant:{{selectedEnseignant}}</div>
+      <div>overEnseignant:{{overEnseignant}}</div>
 
       <span class="gs-form-label">Id</span> :
       <span class="gs-form-output-value">{{e.id}}</span><br>
@@ -17,16 +30,12 @@
 
       <div class=" mt-2">
 
-        <button class="btn btn-link">Voir details</button>
-        <button class="btn btn-outline-primary mx-2">Modifier</button>
-        <button class="btn btn-outline-danger">Supprimer</button>
+        <button class="btn btn-link" [routerLink]="['/details-enseignant',e.id]">Voir details</button>
+
 
       </div>
 
     </div>
-
-
-
 
   </div>
 </div>

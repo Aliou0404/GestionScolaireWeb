@@ -1,11 +1,13 @@
 
 
 <div class="border border-primary rounded-3 mx-2 p-2 ">
-
-
   <div>Details Enseignant</div>
   <div>
-    <img src="/images/{{enseignant.Images}}" class="photo-profil "><br>
+    <div class="text-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+
+    <div *ngIf="enseignant">
+      <img *ngIf="enseignant.Images" src="/images/{{enseignant.Images}}" class="photo-profil ">
+      <img *ngIf="!enseignant.Images" src="/images/icone.png" class="photo-profil "><br>
     <span class="gs-form-label">id   </span> :
     <span class="gs-form-output-value">{{enseignant.id}}</span><br>
 
@@ -30,4 +32,5 @@
 
   </div>
 
+</div>
 </div>
