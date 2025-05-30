@@ -1,0 +1,54 @@
+
+
+<div class="border border-primary rounded-3 mx-2 p-2 ">
+
+  <div *ngIf="errorMessage" class="text-danger">{{errorMessage}}</div>
+  <div>Details formateurs</div>
+
+  <div *ngIf="formateur" >
+    <div>
+      <img *ngIf="formateur.image" src="/images/{{formateur.image}}" class="photo-profil ">
+      <img *ngIf="!formateur.image" src="/images/icone.png" class="photo-profil "><br>
+      <span class="gs-form-label">id   </span> :
+      <span class="gs-form-output-value">{{formateur.id}}</span><br>
+
+      <span class="gs-form-label">nom  </span> :
+      <span class="gs-form-output-value">{{formateur.nom}}</span><br>
+
+      <span class="gs-form-label">prenom  </span> :
+      <span class="gs-form-output-value">{{formateur.prenom}}</span><br>
+
+
+    </div>
+    <div class=" mt-2">
+
+      <button class="btn btn-outline-primary mx-2">Modifier</button>
+      <button class="btn btn-link" routerLink="/liste-formateur">Retour à la  liste des formateurs</button>
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#suppAppModal">
+        supprimer   </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="suppAppModal" #suppAppModal tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Suppression formateur</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Voulez-vous supprimer le formateur <span class="text-danger">{{formateur.prenom}} {{formateur.nom}}</span>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+              <button type="button" class="btn btn-danger" (click)="deleteFormateur(formateur.id)">Supprimer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

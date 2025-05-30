@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Apprenant, Enseignant} from '../modeles';
+import {Apprenant} from '../modeles';
 
 @Injectable({
   providedIn: 'root'
@@ -29,3 +29,4 @@ export class ApprenantsService {
   }
 
 }
+``

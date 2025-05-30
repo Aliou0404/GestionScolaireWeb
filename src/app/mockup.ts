@@ -1,4 +1,4 @@
-import {Apprenant} from './modeles';
+import {Apprenant, Formateurs} from './modeles';
 import {Enseignant} from './modeles';
 
 
@@ -41,6 +41,14 @@ export const ENSEIGNANTS: Enseignant[] = [
     "nom": "Ndiaye",
     "prenom": "ALamine",
     "matieres": "JEE"
-  }
+  },
+]
+export const FORMATEURS: Formateurs[] = [
 
+  {
+    "id": 1,
+    "nom": "Fam",
+    "prenom": "Assane",
+
+  }
 ]

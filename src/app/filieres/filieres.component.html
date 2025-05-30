@@ -1,0 +1,77 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+Ajouter un filiere <i class="bi bi-person-plus-fill" style="font-size: 2rem; color: cornflowerblue;"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+
+
+        <form [formGroup]="filiereForm">
+          <div class="form-floating mb-3 m-2">
+            <input formControlName="code" type="code"
+                   [class.is-valid] = "filiereForm.get('code')?.valid && filiereForm.get('code')?.dirty"
+                   [class.is-invalid] = "filiereForm.get('code')?.invalid && filiereForm.get('code')?.touched "
+                   class="form-control " id="codeFiiere" placeholder="votre code">
+            <label for="codeFiiere">Code </label>
+          </div>
+
+          <div class="form-floating mb-3 m-2">
+            <input formControlName="nom" type="nom"
+                   [class.is-valid] = "filiereForm.get('nom')?.valid && filiereForm.get('nom')?.dirty"
+                   [class.is-invalid] = "filiereForm.get('nom')?.invalid && filiereForm.get('nom')?.touched "
+                   class="form-control " id="nomFiliere" placeholder="">
+            <label for="nomFiliere">Nom </label>
+          </div>
+
+          <div class="form-floating mb-3 m-2">
+            <input formControlName="departement" type="departement"
+                   [class.is-valid] = "filiereForm.get('departement')?.valid && filiereForm.get('departement')?.dirty"
+                   [class.is-invalid] = "filiereForm.get('departement')?.invalid && filiereForm.get('departement')?.touched "
+                   class="form-control " id="departement" placeholder="">
+            <label for="departement">Departement </label>
+          </div>
+
+          <div class="form-floating mb-3 m-2">
+            <input formControlName="description" type="description"
+                   [class.is-valid] = "filiereForm.get('description')?.valid && filiereForm.get('description')?.dirty"
+                   [class.is-invalid] = "filiereForm.get('description')?.invalid && filiereForm.get('description')?.touched "
+                   class="form-control " id="description" placeholder="">
+            <label for="description">Description </label>
+          </div>
+
+
+
+          <div class="mb-3" >
+            <button class="btn btn-primary" [disabled]="filiereForm.invalid">Enregistrer</button>
+            <button class="btn btn-outline-danger">Annuler</button>
+
+          </div>
+
+        </form>
+
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-ajout-filiere *ngIf="action == 'ajoutFiliere'"></app-ajout-filiere>
+
+<div *ngIf="action == 'listeFilieres'">
+     <app-liste-filieres ></app-liste-filieres>
+</div>

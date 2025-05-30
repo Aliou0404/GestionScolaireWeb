@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
 import {Apprenant} from '../modeles';
 import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import {NgIf} from '@angular/common';
 import {ApprenantsService} from '../services/apprenants.service';
+import {Modal} from 'bootstrap';
 import {json} from 'node:stream/consumers';
 
 @Component({
@@ -18,8 +19,11 @@ export class DetailsApprenantComponent implements  OnInit {
 
   apprenant: Apprenant | undefined;
   errorMessage = '';
+  suppModal:Modal | null =  null;
 
-  constructor(private route: ActivatedRoute, private apprenantsService:ApprenantsService, private router:Router) {
+  constructor(private route: ActivatedRoute,
+              private apprenantsService:ApprenantsService,
+              private router:Router,  ) {
   }
 
   ngOnInit(): void {
@@ -54,7 +58,9 @@ export class DetailsApprenantComponent implements  OnInit {
           }
         },
         complete: () => {
+          this.suppModal?.hide();
           this.router.navigate(['/liste-apprenants']);
+
         }
       })
 

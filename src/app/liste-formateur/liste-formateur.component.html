@@ -1,0 +1,37 @@
+<div>
+  <div>Liste des formateurs</div>
+  <div class=" border border-primary">
+    <div *ngIf="!finChargement">
+      <img src="/images/loading.gif" width="50px" alt="Chargement des formateurs">
+    </div>
+    <div class="text-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+
+
+    <div *ngFor="let f of formateur" class="border border-primary mx-2 p-2  "
+         (click)="setSelectedFormateur(f?.id)"
+         [class.selectedDivItem] = "f.id == selectedFormateur"
+         [class.overDivItem] = "f.id == overFormateur"
+         (mouseover)="setOverFormateur(f?.id)"
+    >
+      <div>selectedFormateur:{{selectedFormateur}}</div>
+      <div>overFormateur:{{overFormateur}}</div>
+
+      <span class="gs-form-label">Id</span> :
+      <span class="gs-form-output-value">{{f.id}}</span><br>
+
+      <span class="gs-form-label">Prenom</span> :
+      <span class="gs-form-output-value">{{f.prenom}}</span><br>
+
+      <span class="gs-form-label">Nom</span> :
+      <span class="gs-form-output-value">{{f.nom}}</span><br>
+
+      <div class=" mt-2" *ngIf="overFormateur== f.id">
+        <button class="btn btn-link"
+                [routerLink]="['/detail-formateur',f.id]">
+          Voir details</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -15,6 +15,22 @@ export interface Enseignant{
 
 }
 
+export interface Formateurs{
+  id? : number;
+  nom:string;
+  prenom:string;
+  image ?: string;
+
+}
+
+export interface Filiere{
+  id?: number,
+  code: string,
+  nom?: string,
+  departement: string,
+  description?: string,
+}
+
 
 
 
